@@ -1,7 +1,7 @@
 name: Design Parameter Change
-description: Raise a proposed change to a CSS or MMS design parameter
+description: Raise a proposed change to a CSS design parameter
 title: "[PARAMETER CHANGE]: "
-labels: ["parameter-change", "change-control"]
+labels: ["parameter-change"]
 body:
   - type: input
     id: parameter
@@ -26,31 +26,26 @@ body:
     attributes:
       label: Rationale for change
       description: Why is this parameter change required?
+
+  - type: textarea
+    id: image_upload
+    attributes:
+      label: Upload supporting image from impact identifier
+      description: Drag and drop JPG/PNG
+      placeholder: Paste or drag image files here
  
   - type: checkboxes
     id: affected_models
     attributes:
-      label: Potentially affected models
+      label: Proposed model re-runs
       options:
-        - label: SysML model
-        - label: MATLAB performance model
-        - label: Relyence reliability model
-        - label: FreeCAD CAD model
-        - label: Excel BOM / parameter table
-        - label: Verification matrix
+        - label: Parametric Model Range
+        - label: Reliability Model
+        - label: CAD
+        - label: Bill of Materials
  
   - type: textarea
     id: expected_impact
     attributes:
       label: Expected impact
       placeholder: Performance, reliability, mass, verification evidence, compliance, cost
- 
-  - type: dropdown
-    id: review_decision
-    attributes:
-      label: Required Chief Engineer action
-      options:
-        - Impact assessment required
-        - Approve for implementation
-        - Reject change
-        - Request further analysis
